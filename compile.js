@@ -8,5 +8,5 @@ const solc = require('solc');
 const inboxPath = path.resolve(__dirname, 'contracts', 'Inbox.sol'); // gera um path para o Inbox.sol na pasta contracts
 const source = fs.readFileSync(inboxPath, 'utf8');
 
-solc.compile(source,1);
+module.exports = solc.compile(source,1).contracts[':Inbox'];
 
